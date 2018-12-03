@@ -1,0 +1,12 @@
+version: '2.2'
+
+services:
+    mailhog:
+        image: mailhog/mailhog:${DOCKER_MAILHOG_VERSION}
+        mem_limit: ${DOCKER_MAILHOG_RAM}
+        container_name: ${COMPOSE_PROJECT_NAME}_mailhog
+        hostname: ${COMPOSE_PROJECT_NAME}_mailhog
+        networks: [stakkr]
+        labels:
+            - traefik.frontend.rule=Host:mailhog.${COMPOSE_PROJECT_NAME}.${PROXY_DOMAIN}
+            - traefik.port=8025 # because mailhog exposes more than one port

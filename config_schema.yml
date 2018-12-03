@@ -1,0 +1,42 @@
+---
+
+"$schema": http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  services:
+    type: object
+    additionalProperties: false
+    properties:
+      mailcatcher:
+        type: object
+        properties:
+          enabled: { type: boolean }
+          version: { type: [string, number] }
+          ram: { type: string }
+          name: { type: string }
+          service_name: { type: string }
+          service_url: { type: string }
+          service_extra_ports: { type: array }
+        required: [enabled, version, ram, service_name, service_url, service_extra_ports]
+      maildev:
+        type: object
+        properties:
+          enabled: { type: boolean }
+          version: { type: [string, number] }
+          ram: { type: string }
+          name: { type: string }
+          service_name: { type: string }
+          service_url: { type: string }
+          service_extra_ports: { type: array }
+        required: [enabled, version, ram, service_name, service_url, service_extra_ports]
+      mailhog:
+        type: object
+        properties:
+          enabled: { type: boolean }
+          version: { type: [string, number] }
+          ram: { type: string }
+          name: { type: string }
+          service_name: { type: string }
+          service_url: { type: string }
+          service_extra_ports: { type: array }
+        required: [enabled, version, ram, service_name, service_url, service_extra_ports]
