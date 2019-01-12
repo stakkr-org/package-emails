@@ -9,33 +9,33 @@ properties:
     properties:
       mailcatcher:
         type: object
+        additionalProperties: false
         properties:
           enabled: { type: boolean }
           version: { type: [string, number] }
           ram: { type: string }
-          name: { type: string }
           service_name: { type: string }
           service_url: { type: string }
           service_extra_ports: { type: array }
         required: [enabled, version, ram, service_name, service_url, service_extra_ports]
       maildev:
         type: object
+        additionalProperties: false
         properties:
           enabled: { type: boolean }
           version: { type: [string, number] }
           ram: { type: string }
-          name: { type: string }
           service_name: { type: string }
           service_url: { type: string }
           service_extra_ports: { type: array }
         required: [enabled, version, ram, service_name, service_url, service_extra_ports]
       mailhog:
         type: object
+        additionalProperties: false
         properties:
           enabled: { type: boolean }
           version: { type: [string, number] }
           ram: { type: string }
-          name: { type: string }
           service_name: { type: string }
           service_url: { type: string }
           service_extra_ports: { type: array }
